@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:stepx_task/models/product_model.dart';
 import 'package:stepx_task/views/manager/product_cubit.dart';
+import 'package:stepx_task/views/product_details.dart';
 
 class ProductListScreen extends StatelessWidget {
   final RefreshController _refreshController = RefreshController();
@@ -125,9 +126,12 @@ class ProductItem extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Buying ${product.title}')),
-                        );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductDetailScreen(product: product),
+                            ));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stepx_task/views/product_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const ProductListScreen(),
+      home: ProductListScreen(),
     );
   }
 }

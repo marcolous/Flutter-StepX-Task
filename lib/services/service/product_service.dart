@@ -7,7 +7,7 @@ class ProductService {
 
   ProductService(this.dioClient);
 
-   Future<List<ProductModel>?> fetchAllProducts() async {
+  Future<List<ProductModel>?> fetchAllProducts() async {
     try {
       final res = await dioClient.dio.get('/products');
       if (res.statusCode == 200) {
@@ -15,6 +15,7 @@ class ProductService {
         return products;
       }
     } catch (e) {
+      print(e);
       AppFlutterToast.flutterToastError('Couldn\'t fetch Products');
       return null;
     }

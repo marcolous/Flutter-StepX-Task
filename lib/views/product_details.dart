@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:stepx_task/models/product_model.dart';
 
 class ProductDetailScreen extends StatefulWidget {

@@ -13,6 +13,7 @@ class ProductListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final childAspectRatio = (200.w / 370.h);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Products'),
@@ -29,9 +30,9 @@ class ProductListScreen extends StatelessWidget {
                 _refreshController.refreshCompleted();
               },
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: .53,
+                  childAspectRatio: childAspectRatio,
                 ),
                 itemCount: products!.length,
                 itemBuilder: (context, index) {
